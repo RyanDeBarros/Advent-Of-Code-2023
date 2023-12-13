@@ -60,6 +60,7 @@ struct Row
 
 	void combos(int num, int i, int n, long &count)
 	{
+		cout << "hi" << endl;
 		for (int k = n; k < springList.size(); k++)
 		{
 			switch (springList[k])
@@ -68,9 +69,13 @@ struct Row
 					if (++num > arrangements[i]) return;
 					break;
 				case '.':
-					if (num > 0) i++;
-					if (i >= arrangements.size()) return;
-					num = 0;
+					if (num > 0) 
+					{
+						if (num != arrangements[i]) return;
+						i++;
+						if (i >= arrangements.size()) return;
+						num = 0;
+					}
 					break;
 				case '?':
 					if (num == arrangements[i])
@@ -85,8 +90,11 @@ struct Row
 					break;
 			}
 		}
-		count++;
-		return;
+		if (num > 0) {
+			if (num != arrangements[i]) return;
+			i++;
+		}
+		if (i == arrangements.size()) count++;
 	}
 };
 
