@@ -1,0 +1,1 @@
+Part 2 not solved by P2.cpp yet. T.cpp comes from https://github.com/biggysmith/advent_of_code_2023/blob/master/src/day14/day14.cpp (slightly modified for text file)
